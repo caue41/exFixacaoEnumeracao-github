@@ -15,7 +15,7 @@ public class Order {
 	private Client client;
 	private List<OrderItem> items = new ArrayList<OrderItem>();
 	
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
 	
 	public Order() {
@@ -70,12 +70,12 @@ public class Order {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Order moment");
+		sb.append("Order moment ");
 		sb.append(sdf.format(moment) + "\n" );
-		sb.append("Order status");
+		sb.append("Order status ");
 		sb.append(status + "\n");
 		sb.append("Client: ");
-		sb.append(client + "\n");
+		sb.append(client.toString() + "\n");
 		sb.append("Order items:\n");
 		for(OrderItem item : items) {
 			sb.append(item + "\n");
