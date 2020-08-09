@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 
 import entities.num.OrderStatus;
+import entities.OrderItem;
+import entities.Product;
 
 public class Order {
 	
@@ -59,12 +61,20 @@ public class Order {
 		items.remove(item);
 	}
 	
-	public double total() {
+/*	public double total() {
 		double orderTotal = 0;
 		for(OrderItem c : items) {
 			orderTotal += c.subTotal();
 		}
 		return orderTotal;
 	}
-	
+
+	public String toString() {
+		for(OrderItem c : items) {
+			return getItems().get(0)
+				+ String.format(", $%.2f, ", price)
+				+ String.format("Quantity %d, ", quantity)
+				+ String.format("Subtotal: $%.2f%n", subTotal());
+		}
+	}*/
 }
