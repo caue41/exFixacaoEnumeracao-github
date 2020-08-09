@@ -38,29 +38,24 @@ public class Program {
 		
 		Order order = new Order(x, OrderStatus.valueOf(orderStatus), new Client(clientName, clientEmail, clientBirth));
 		
-		System.out.println("Enter #1 item data:");
-		System.out.print("Product name: ");
-		String productName = sc.next();
-		System.out.print("Product price: ");
-		double productPrice = sc.nextDouble();
-		System.out.print("Quantity: ");
-		int itemQuantity = sc.nextInt();
-		Product itemProduct = new Product(productName, productPrice);
-		OrderItem orderItemData = new OrderItem(itemQuantity, itemProduct.getPrice(), itemProduct);
-		
-		for(int i = 2; i <= itemsQuantity; i++) {
+		for(int i = 1; i <= itemsQuantity; i++) {
 			System.out.println("Enter #" + i + " item data:");
 			System.out.print("Product name: ");
-			productName = sc.next();
+			String productName = sc.next();
 			System.out.print("Product price: ");
-			productPrice = sc.nextDouble();
+			Double productPrice = sc.nextDouble();
 			System.out.print("Quantity: ");
-			itemQuantity = sc.nextInt();
-			orderItemData = new OrderItem(itemQuantity, itemProduct.getPrice(), itemProduct);
-			order.addItem(orderItemData);
+			Integer itemQuantity = sc.nextInt();
+			Product product = new Product(productName, productPrice);
+			OrderItem it = new OrderItem(itemQuantity, productPrice, product );
+			order.addItem(it);
 		}
 		
 		System.out.println();
+		System.out.println(order);
+		
+		
+		/*System.out.println();
 		System.out.println("ORDER SUMARY:");
 		System.out.println("Order moment: " + sdf2.format(order.getMoment()));
 		System.out.println("Order status: " + order.getStatus());
@@ -74,10 +69,10 @@ public class Program {
 		
 		for(int i = 0; i < itemsQuantity; i++) {
 			orderItemData.toString();
-			System.out.println(orderItemData);
+			System.out.print(orderItemData);
 		}
 		
-		System.out.printf("Total price: $%.2f%n", order.total());
+		System.out.printf("Total price: $%.2f%n", order.total());*/
 				
 		
 		sc.close();
